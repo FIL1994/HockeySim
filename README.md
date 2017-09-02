@@ -1,5 +1,6 @@
 # HockeySim
 A hockey simulator made with React and Redux.
+<hr>
 <ul>
   <li>Randomly generated teams</li>
   <li>Randomly generated players</li>
@@ -8,5 +9,6 @@ A hockey simulator made with React and Redux.
   <li>Team Standings</li>
   <li>Player Stats</li>
 </ul>
+<hr>
 
 ![Logo](http://philvr.com/react/img/hockeysim.png)
