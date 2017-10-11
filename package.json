@@ -9,7 +9,7 @@
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
-  "author": "",
+  "author": "Philip Van Raalte",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -26,8 +26,8 @@
     "mocha": "^3.5.0",
     "react-addons-test-utils": "^15.6.0",
     "style-loader": "^0.18.2",
-    "webpack": "^3.5.5",
-    "webpack-dev-server": "^2.7.1"
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
   },
   "dependencies": {
     "ajv": "^5.2.2",
@@ -36,9 +36,9 @@
     "chance": "^1.0.10",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
-    "react": "^15.6.1",
+    "react": "16.0.0",
     "react-big-calendar": "^0.14.4",
-    "react-dom": "^15.6.1",
+    "react-dom": "16.0.0",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
