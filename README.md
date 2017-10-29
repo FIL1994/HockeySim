@@ -1,5 +1,5 @@
 # HockeySim
-A hockey simulator made with React and Redux.
+A hockey league simulator made with React and Redux.
 <hr>
 <ul>
   <li>Randomly generated teams</li>
