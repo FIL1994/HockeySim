@@ -1,7 +1,7 @@
 {
   "name": "hockey-sim",
   "version": "1.0.0",
-  "description": "hockey sim - React/Redux and Babel support. Hockey season simulation.",
+  "description": "hockey sim - React/Redux and Babel support. Hockey league and season simulation web application.",
   "main": "index.js",
   "repository": "",
   "scripts": {
