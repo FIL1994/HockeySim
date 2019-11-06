@@ -3,7 +3,7 @@
  * @date 2017-08-23.
  */
 import React, { Component } from "react";
-import { Header, Button, Icon, Grid, Segment, Label } from "semantic-ui-react";
+import { Button, Icon, Grid, Segment, Label } from "semantic-ui-react";
 import _ from "lodash";
 
 import BigCalendar from "react-big-calendar";
@@ -47,8 +47,16 @@ class MyCalendar extends Component {
               floated="right"
               width={4}
               className="margin-vertical-negative-30"
+              style={{
+                paddingRight: 0
+              }}
             >
-              <Button.Group className="bottom-padding">
+              <Button.Group
+                className="bottom-padding"
+                style={{
+                  float: "right"
+                }}
+              >
                 <Button animated="left" onClick={goToBack} color="vk">
                   <Button.Content visible>
                     <Icon name="left arrow" />

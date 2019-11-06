@@ -104,17 +104,14 @@ class Home extends Component {
   };
 
   render() {
-    //tab panes
-    const panes = [
+    const tabPanes = [
       {
         menuItem: "Teams",
-        render: () => {
-          return (
-            <Tab.Pane attached={false}>
-              <TeamsInfo teams={this.props.teams} />
-            </Tab.Pane>
-          );
-        }
+        render: () => (
+          <Tab.Pane attached={false}>
+            <TeamsInfo teams={this.props.teams} />
+          </Tab.Pane>
+        )
       },
       {
         menuItem: "Schedule",
@@ -128,7 +125,6 @@ class Home extends Component {
                   .date(1)
                   .toDate()}
                 onSelectEvent={event => {
-                  console.log("SELECTED EVENT", event);
                   this.setState({
                     selected: {
                       date: event.start,
@@ -140,7 +136,6 @@ class Home extends Component {
                   });
                 }}
                 onSelectSlot={slotInfo => {
-                  console.log("SELECTED SLOT", slotInfo);
                   this.setState({
                     selected: {
                       date: slotInfo.start,
@@ -152,14 +147,11 @@ class Home extends Component {
                   });
                 }}
                 events={this.getEvents()}
-                defaultDate={
-                  moment()
-                    .year(1970)
-                    .month(0)
-                    .date(1)
-                    .toDate()
-                  // new Date(2015, 3, 1)
-                }
+                defaultDate={moment()
+                  .year(1970)
+                  .month(0)
+                  .date(1)
+                  .toDate()}
               />
             </Tab.Pane>
           );
@@ -178,11 +170,8 @@ class Home extends Component {
       >
         <Modal.Header>
           <Header textAlign="center" color="white" className="whiteText">
-            {_.isDate(this.state.selected.date)
-              ? `Sim to ${this.state.selected.dateString}?`
-              : ""
-            // _.isDate(this.state.selected.date) ? this.state.selected.date.toDateString() : ""
-            }
+            {_.isDate(this.state.selected.date) &&
+              `Sim to ${this.state.selected.dateString}?`}
           </Header>
         </Modal.Header>
         <Modal.Actions>
@@ -226,36 +215,25 @@ class Home extends Component {
       <Container>
         <Segment textAlign="center" piled>
           <Button.Group inverted>
-            <Button color="green" onClick={this.openModal}>
-              Show Modal
-            </Button>
-            <Button
-              primary
-              onClick={() => {
-                console.log("GET TEAMS", this.props.teams);
-                this.props.getTeams();
-              }}
-            >
-              Print Teams
-            </Button>
             <Button
               color="teal"
               onClick={() => {
                 this.makeTeams();
               }}
             >
-              New Teams
+              Make New Teams
             </Button>
           </Button.Group>
         </Segment>
         <Tab
+          className="teams-and-schedule-tab"
           menu={{
             secondary: true,
             pointing: true,
             color: "black",
             inverted: false
           }}
-          panes={panes}
+          panes={tabPanes}
         />
         {modalSim}
         <br />

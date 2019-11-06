@@ -1,57 +1,62 @@
-.no-border{
-    border: none !important;
-    box-shadow: none !important;
+.no-border {
+  border: none !important;
+  box-shadow: none !important;
 }
 
-.vertical-padding{
-    padding-top: 10px;
-    padding-bottom: 10px;
+.vertical-padding {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-.top-padding{
-    padding-top: 10px;
+.top-padding {
+  padding-top: 10px;
 }
 
-.bottom-padding{
-    padding-bottom: 10px;
+.bottom-padding {
+  padding-bottom: 10px;
 }
 
-.left-space{
-    margin-left: 5px;
+.left-space {
+  margin-left: 5px;
 }
 
-.right-space{
-    margin-right: 5px;
+.right-space {
+  margin-right: 5px;
 }
 
-.bottom-space{
-    margin-bottom: 5px;
+.bottom-space {
+  margin-bottom: 5px;
 }
 
-.top-space{
-    margin-top: 5px;
+.top-space {
+  margin-top: 5px;
 }
 
 .header.small {
-    font-size: 1.18em !important;
+  font-size: 1.18em !important;
 }
 
-.margin-vertical-negative-30{
-    margin-bottom: -30px;
-    margin-top: -30px;
+.margin-vertical-negative-30 {
+  margin-bottom: -30px;
+  margin-top: -30px;
 }
 
 .whiteText {
-    color: white !important;
+  color: white !important;
 }
 
 .light-background {
-    background-color: rgba(0,0, 0, 0.15) !important;
-    border-radius: 10px !important;
-    padding: 30px !important;
+  background-color: rgba(0, 0, 0, 0.15) !important;
+  border-radius: 10px !important;
+  padding: 30px !important;
 }
 
-.rbc-event{
-    max-width: 80px;
-    font-size: 0.8em;
+.rbc-event {
+  max-width: 80px;
+  font-size: 0.8em;
+}
+
+.teams-and-schedule-tab > .ui.segment {
+  border: none;
+  box-shadow: none;
 }
