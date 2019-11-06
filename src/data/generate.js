@@ -16,8 +16,6 @@ export function generateTeams({ teamsCount }) {
     playerID = 0;
   const teamCities = _.take(_.shuffle(_.uniq(CITIES)), teamsCount);
   const teamNames = _.take(_.shuffle(_.uniq(TEAM_NAMES)), teamsCount);
-  console.log("City Name Count", _.uniq(CITIES).length);
-  console.log("Team Name Count", _.uniq(TEAM_NAMES).length);
 
   for (let i = 0; i < teamCities.length; i++) {
     const teamName = `${teamCities[i]} ${teamNames[i]}`;
