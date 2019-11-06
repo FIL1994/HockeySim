@@ -2,20 +2,34 @@
  * @author Philip Van Raalte
  * @date 2017-08-14.
  */
-import _ from 'lodash';
+import _ from "lodash";
 
-export function calculatePlayerOverall (player) {
-  let overall = -1, skillsSum = 0;
+export function calculatePlayerOverall(player) {
+  let overall = -1,
+    skillsSum = 0;
   const s = player.skills;
-  switch(player.position){
+  switch (player.position) {
     case "Goalie":
-      skillsSum += s.aggression + s.breakaway + s.goaltending + s.high + s.low +
-        s.speed + s.teamwork;
+      skillsSum +=
+        s.aggression +
+        s.breakaway +
+        s.goaltending +
+        s.high +
+        s.low +
+        s.speed +
+        s.teamwork;
       overall = skillsSum / 7;
       break;
     default:
-      skillsSum += s.aggression + s.defence + s.offense + s.passing + s.shooting +
-        s.speed + s.strength + s.teamwork;
+      skillsSum +=
+        s.aggression +
+        s.defence +
+        s.offense +
+        s.passing +
+        s.shooting +
+        s.speed +
+        s.strength +
+        s.teamwork;
       overall = skillsSum / 8;
       break;
   }
@@ -31,14 +45,18 @@ export function calculatePlayersOverall(players) {
 }
 
 export function calculateTeamOverall(team) {
-  let skillsSum = calculateTeamOffense(team) + calculateTeamDefence(team) + calculateTeamGoaltending(team);
+  let skillsSum =
+    calculateTeamOffense(team) +
+    calculateTeamDefence(team) +
+    calculateTeamGoaltending(team);
   let overall = skillsSum / 3;
   return _.round(overall);
 }
 
 export function calculateTeamTeamwork(team) {
-  let overall = -1, teamworkSum = 0;
-  team.players.map(function (p) {
+  let overall = -1,
+    teamworkSum = 0;
+  team.players.map(function(p) {
     teamworkSum += p.skills.teamwork;
   });
   overall = teamworkSum / team.players.length;
@@ -54,8 +72,9 @@ export function calculatePlayersTeamwork(players) {
 }
 
 export function calculateTeamAggression(team) {
-  let overall = -1, aggressionSum = 0;
-  team.players.map(function (p) {
+  let overall = -1,
+    aggressionSum = 0;
+  team.players.map(function(p) {
     aggressionSum += p.skills.aggression;
   });
   overall = aggressionSum / team.players.length;
@@ -71,13 +90,14 @@ export function calculatePlayersAggression(players) {
 }
 
 export function calculateTeamOffense(team) {
-  let overall = -1, skillsSum = 0;
+  let overall = -1,
+    skillsSum = 0;
 
-  const players = _.filter(team.players, function ({position}) {
+  const players = _.filter(team.players, function({ position }) {
     return position === "Winger";
   });
 
-  players.map(function (p) {
+  players.map(function(p) {
     skillsSum += calculatePlayerOverall(p);
   });
 
@@ -94,13 +114,14 @@ export function calculatePlayersOffense(players) {
 }
 
 export function calculateTeamDefence(team) {
-  let overall = -1, skillsSum = 0;
+  let overall = -1,
+    skillsSum = 0;
 
-  const players = _.filter(team.players, function ({position}) {
+  const players = _.filter(team.players, function({ position }) {
     return position === "Defence";
   });
 
-  players.map(function (p) {
+  players.map(function(p) {
     skillsSum += calculatePlayerOverall(p);
   });
 
@@ -109,13 +130,14 @@ export function calculateTeamDefence(team) {
 }
 
 export function calculateTeamGoaltending(team) {
-  let overall = -1, skillsSum = 0;
+  let overall = -1,
+    skillsSum = 0;
 
-  const players = _.filter(team.players, function ({position}) {
+  const players = _.filter(team.players, function({ position }) {
     return position === "Goalie";
   });
 
-  players.map(function (p) {
+  players.map(function(p) {
     skillsSum += calculatePlayerOverall(p);
   });
 
@@ -124,12 +146,12 @@ export function calculateTeamGoaltending(team) {
 }
 
 export function getTeamWingers(team, sorted = false) {
-  let players = _.filter(team.players, function (p) {
+  let players = _.filter(team.players, function(p) {
     return p.position === "Winger";
   });
 
-  if(sorted){
-    players = _.sortBy(players, function (p) {
+  if (sorted) {
+    players = _.sortBy(players, function(p) {
       return -calculatePlayerOverall(p);
     });
   }
@@ -138,12 +160,12 @@ export function getTeamWingers(team, sorted = false) {
 }
 
 export function getTeamDefence(team, sorted = false) {
-  let players = _.filter(team.players, function (p) {
+  let players = _.filter(team.players, function(p) {
     return p.position === "Defence";
   });
 
-  if(sorted){
-    players = _.sortBy(players, function (p) {
+  if (sorted) {
+    players = _.sortBy(players, function(p) {
       return -calculatePlayerOverall(p);
     });
   }
@@ -152,12 +174,12 @@ export function getTeamDefence(team, sorted = false) {
 }
 
 export function getTeamGoalies(team, sorted = false) {
-  let players = _.filter(team.players, function (p) {
+  let players = _.filter(team.players, function(p) {
     return p.position === "Goalie";
   });
 
-  if(sorted){
-    players = _.sortBy(players, function (p) {
+  if (sorted) {
+    players = _.sortBy(players, function(p) {
       return -calculatePlayerOverall(p);
     });
   }
