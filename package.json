@@ -11,6 +11,8 @@
   "author": "Philip Van Raalte",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
     "cssnano": "^4.1.10",
     "parcel-bundler": "^1.12.4"
   },
