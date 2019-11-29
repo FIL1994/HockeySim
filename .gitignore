@@ -6,3 +6,8 @@ npm-debug.log
 # IntelliJ
 *.iml
 /.idea
+
+# parcel
+.cache
+dist/*
+!dist/_redirects
