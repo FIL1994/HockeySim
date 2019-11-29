@@ -1,0 +1,3 @@
+[build]
+publish = 'project/build-output/'
+command = 'npm run build'
