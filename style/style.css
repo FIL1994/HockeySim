@@ -60,3 +60,7 @@
   border: none;
   box-shadow: none;
 }
+
+.container > .segment:first-of-type {
+  border-radius: 0;
+}

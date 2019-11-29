@@ -36,6 +36,6 @@
     "redux": "^3.7.2",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.3.0",
-    "semantic-ui-react": "^0.71.5"
+    "semantic-ui-react": "^0.88.1"
   }
 }
