@@ -249,7 +249,9 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  { getTeams, saveTeams, getSchedule, saveSchedule }
-)(Home);
+export default connect(mapStateToProps, {
+  getTeams,
+  saveTeams,
+  getSchedule,
+  saveSchedule
+})(Home);

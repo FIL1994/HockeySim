@@ -115,7 +115,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  { getTeams, saveTeams }
-)(Stats);
+export default connect(mapStateToProps, { getTeams, saveTeams })(Stats);

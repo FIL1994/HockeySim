@@ -309,7 +309,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  { getTeams }
-)(Standings);
+export default connect(mapStateToProps, { getTeams })(Standings);

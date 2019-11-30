@@ -555,7 +555,7 @@ export function generateSchedule(teams) {
               if (
                 game[0] === combo[0] ||
                 game[1] === combo[0] ||
-                (game[0] === combo[1] || game[1] === combo[1])
+                game[0] === combo[1] || game[1] === combo[1]
               ) {
                 foundGame = true;
                 break;
@@ -611,7 +611,7 @@ export function scheduleToEvents(schedule, teamAbbreviation, otherEvents) {
 
       if (
         !filterByTeam ||
-        (game[0] === teamAbbreviation || game[1] === teamAbbreviation)
+        game[0] === teamAbbreviation || game[1] === teamAbbreviation
       ) {
         events.push({
           title: `${game[0]} - ${game[1]}`,

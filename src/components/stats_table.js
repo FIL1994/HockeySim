@@ -3,11 +3,9 @@
  * @date 2017-08-23.
  */
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import { Segment, Table, Tab } from "semantic-ui-react";
 import _ from "lodash";
 
-import { getTeams } from "../actions";
 import { calculatePlayerOverall } from "../data/stats";
 
 class StatsTable extends Component {
