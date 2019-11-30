@@ -8,15 +8,12 @@ import { Menu, Segment, Container } from "semantic-ui-react";
 import { Link, withRouter, matchPath } from "react-router-dom";
 
 class HeaderNav extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { activeItem: "home" };
-    this.links = [
-      { name: "Home", path: "/", isExact: true },
-      { name: "Standings", path: "/standings/", isExact: false },
-      { name: "Stats", path: "/stats/", isExact: false }
-    ];
-  }
+  state = { activeItem: "home" };
+  links = [
+    { name: "Home", path: "/", isExact: true },
+    { name: "Standings", path: "/standings/", isExact: false },
+    { name: "Stats", path: "/stats/", isExact: false }
+  ];
 
   render() {
     return (

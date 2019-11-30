@@ -67,74 +67,46 @@ class StatsTable extends Component {
 
     switch (column) {
       case "overall":
-        row = p => {
-          return -p.overall;
-        };
+        row = p => -p.overall;
         break;
       case "points":
-        row = ({ stats }) => {
-          return -(stats.goals + stats.assists);
-        };
+        row = ({ stats }) => -(stats.goals + stats.assists);
         break;
       case "goals":
-        row = ({ stats }) => {
-          return -stats.goals;
-        };
+        row = ({ stats }) => -stats.goals;
         break;
       case "assists":
-        row = ({ stats }) => {
-          return -stats.assists;
-        };
+        row = ({ stats }) => -stats.assists;
         break;
       case "shots":
-        row = ({ stats }) => {
-          return -stats.shots;
-        };
+        row = ({ stats }) => -stats.shots;
         break;
       case "plusMinus":
-        row = ({ stats }) => {
-          return -stats.plusMinus;
-        };
+        row = ({ stats }) => -stats.plusMinus;
         break;
       case "pim":
-        row = ({ stats }) => {
-          return -stats.pim;
-        };
+        row = ({ stats }) => -stats.pim;
         break;
       case "sa":
-        row = ({ stats }) => {
-          return -stats.sa;
-        };
+        row = ({ stats }) => -stats.sa;
         break;
       case "ga":
-        row = ({ stats }) => {
-          return -stats.ga;
-        };
+        row = ({ stats }) => -stats.ga;
         break;
       case "so":
-        row = ({ stats }) => {
-          return -stats.so;
-        };
+        row = ({ stats }) => -stats.so;
         break;
       case "wins":
-        row = ({ stats }) => {
-          return -stats.wins;
-        };
+        row = ({ stats }) => -stats.wins;
         break;
       case "losses":
-        row = ({ stats }) => {
-          return -stats.losses;
-        };
+        row = ({ stats }) => -stats.losses;
         break;
       case "savePercent":
-        row = ({ stats }) => {
-          return -(1 - stats.ga / stats.sa);
-        };
+        row = ({ stats }) => -(1 - stats.ga / stats.sa);
         break;
       case "shootingPercent":
-        row = ({ stats }) => {
-          return -(stats.goals / stats.shots);
-        };
+        row = ({ stats }) => -(stats.goals / stats.shots);
         break;
       case "position":
         row = "position";
@@ -146,14 +118,10 @@ class StatsTable extends Component {
         row = "name";
         break;
       case "id":
-        row = p => {
-          return -p.id;
-        };
+        row = p => -p.id;
         break;
       default:
-        row = p => {
-          return -p.overall;
-        };
+        row = p => -p.overall;
         break;
     }
 
